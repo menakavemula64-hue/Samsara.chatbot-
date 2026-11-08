@@ -1,0 +1,13 @@
+{
+  "name": "samsara",
+  "version": "1.0.0",
+  "description": "Samsara: speak with Mahadev, learn Dharma, practise daily and read Shiv-Shakti stories.",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --env-file=.env server.js"
+  },
+  "engines": { "node": ">=20.6" },
+  "dependencies": { "express": "^4.21.0" }
+}
