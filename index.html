@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Samsara – Speak with Mahadev</title>
+<meta name="theme-color" content="#52101f">
+<meta name="description" content="Samsara: speak with Mahadev, learn Dharma, follow daily practices, chant and read Shiv–Shakti stories.">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6e6d6;--card:#fff8f0;--ink:#3a0e16;--mute:#7a4a4f;--line:#e2c3ae;--acc:#7a1428;--on:#fff;--gold:#b8862b;--you:#f0d3bd;--bot:#fff8f0;--ov:#4a0a18;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a070f;--card:#3a0d18;--ink:#f7e3d0;--mute:#d0a89a;--line:#5e1c2b;--acc:#e0a24a;--on:#2a070f;--gold:#e0a24a;--you:#5a1827;--bot:#3a0d18;--ov:#1c0409;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#2a070f;--card:#3a0d18;--ink:#f7e3d0;--mute:#d0a89a;--line:#5e1c2b;--acc:#e0a24a;--on:#2a070f;--gold:#e0a24a;--you:#5a1827;--bot:#3a0d18;--ov:#1c0409;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Nunito",system-ui,sans-serif;min-height:100vh}
+#bgart{position:fixed;inset:0;z-index:-1;opacity:.14;pointer-events:none;display:flex;align-items:center;justify-content:center}
+#bgart svg{width:min(900px,140vw);height:auto}
+.spin{transform-origin:300px 300px;animation:sp 120s linear infinite}@keyframes sp{to{transform:rotate(360deg)}}
+main{max-width:780px;margin:0 auto;padding:12px 16px 40px}
+header{text-align:center;padding:6px 0}
+header svg{width:96px;height:96px}
+h1{font:700 30px/1.2 "Cinzel",Georgia,serif;margin:0;color:var(--acc);letter-spacing:.04em}
+.sub{color:var(--mute);font-size:14px;margin:2px 0}
+nav{display:flex;gap:4px;margin:12px 0;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:5px;position:sticky;top:env(safe-area-inset-top,0px);z-index:5;overflow-x:auto}
+nav button{flex:1 0 auto;border:0;background:none;color:var(--mute);font:700 13px "Nunito",sans-serif;padding:9px 11px;border-radius:10px;cursor:pointer;white-space:nowrap}
+nav button[aria-selected="true"]{background:var(--acc);color:var(--on)}
+button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+section{display:none}section.on{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin-bottom:12px}
+#log{display:flex;flex-direction:column;gap:10px;min-height:240px;max-height:52vh;overflow-y:auto}
+.m{max-width:90%;padding:10px 14px;border-radius:16px;white-space:pre-wrap;overflow-wrap:anywhere}
+.m.you{align-self:flex-end;background:var(--you);border-bottom-right-radius:4px}
+.m.bot{align-self:flex-start;background:var(--bot);border:1px solid var(--gold);border-bottom-left-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0}
+.chip{border:1px solid var(--gold);background:none;color:var(--ink);border-radius:999px;padding:6px 12px;font:600 13px "Nunito",sans-serif;cursor:pointer}
+.row{display:flex;gap:8px;flex-wrap:wrap}
+input[type=text],select{flex:1;font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+select{flex:0 0 auto}
+.btn{border:0;background:var(--acc);color:var(--on);font:700 15px "Nunito",sans-serif;border-radius:12px;padding:10px 16px;cursor:pointer}
+.btn.alt{background:none;color:var(--acc);border:1px solid var(--acc)}.btn[disabled]{opacity:.5}
+h2{font:700 20px "Cinzel",Georgia,serif;margin:0 0 4px;color:var(--acc)}h3{font:700 16px "Nunito";margin:8px 0 2px}
+p{margin:6px 0}.mute{color:var(--mute);font-size:14px}
+details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;font-weight:700}
+ol{margin:6px 0 10px 20px;padding:0}
+.todo{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid var(--line)}
+.todo input{width:20px;height:20px;accent-color:var(--acc)}.todo.done span{text-decoration:line-through;color:var(--mute)}.todo span{flex:1}
+.x{border:0;background:none;color:var(--mute);font-size:20px;cursor:pointer}
+.bar{height:8px;background:var(--line);border-radius:6px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--gold);width:0;transition:width .3s}
+#jap{width:min(230px,70vw);aspect-ratio:1;border-radius:50%;border:6px solid var(--gold);background:var(--you);color:var(--ink);font:700 54px "Cinzel",serif;cursor:pointer;display:block;margin:12px auto}
+#jap small{display:block;font:600 14px "Nunito";color:var(--mute)}.center{text-align:center}
+.quote{font:500 19px/1.5 "Cinzel",Georgia,serif;color:var(--acc);margin:8px 0}
+.badge{display:inline-block;border:1px solid var(--gold);border-radius:999px;padding:3px 11px;margin:3px 3px 0 0;font-size:13px}.badge.off{opacity:.4}
+.sk{font-size:13px;color:var(--mute);text-align:center;margin-top:18px}
+a{color:var(--acc);font-weight:700}
+#ov{position:fixed;inset:0;z-index:50;background:radial-gradient(circle at 50% 30%,#7a1428,var(--ov) 70%);color:#f7e3d0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:24px;transition:opacity .6s}
+#ov.off{opacity:0;pointer-events:none}#ov .quote{color:#f2c879;font-size:23px;max-width:560px}#ov svg{width:120px;height:120px}
+#ov .btn{background:#f2c879;color:#3a0e16;margin-top:18px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}.spin{animation:none}}
+body{--bg:transparent;--card:rgba(24,6,14,.62);--ink:#fbeedd;--mute:#e6c9b6;--line:rgba(242,200,121,.3);--acc:#f2c879;--on:#2a070f;--gold:#f2c879;--you:rgba(140,24,48,.75);--bot:rgba(24,6,14,.6);--g:linear-gradient(160deg,#150826,#3b0b22 55%,#6a1226);background:var(--g) fixed;color-scheme:dark}
+body[data-pg=stories]{--g:linear-gradient(160deg,#3a0820,#7d1d3c 55%,#c2506a)}
+body[data-pg=rules]{--g:linear-gradient(160deg,#3b1706,#8a4312 55%,#d99033)}
+body[data-pg=mine]{--g:linear-gradient(160deg,#07241f,#14574a 55%,#3a9a7c)}
+body[data-pg=japa]{--g:linear-gradient(160deg,#04142b,#12457a 55%,#3d8fc4)}
+body[data-pg=exp]{--g:linear-gradient(160deg,#1c0b3d,#53307f 55%,#9a6fd0)}
+#bgart,#ov{display:none!important}
+#jap{border:0;background:radial-gradient(circle,var(--you) 0 62%,transparent 63%),conic-gradient(var(--gold) calc(var(--p,0)*1%),rgba(255,255,255,.18) 0);box-shadow:0 0 30px rgba(242,200,121,.25)}
+#sv{position:fixed;left:50%;top:5vh;width:min(440px,92vw);height:74vh;transform:translateX(-50%) perspective(900px) rotateY(calc(var(--px,0)*9deg)) rotateX(calc(var(--py,0)*-5deg));display:none;z-index:0;pointer-events:none;filter:drop-shadow(0 0 28px rgba(110,160,255,.4))}
+body[data-pg=ask] #sv{display:block}
+#sv{top:3vh;width:min(580px,100vw);height:62vh;filter:drop-shadow(0 0 24px rgba(230,194,122,.4))}#sv svg{width:100%;height:100%;animation:fl 8s ease-in-out infinite}@keyframes fl{50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){#sv svg{animation:none}}
+body[data-pg=ask] .card{--card:rgba(44,6,18,.55)}
+body[data-pg=ask]{--g:linear-gradient(165deg,#220510,#52101f 55%,#7a1a2e)}
+main{position:relative;z-index:1}
+#fz{position:fixed;top:0;left:0;right:0;height:36vh;z-index:0;touch-action:none;cursor:grab}
+body[data-pg=ask] main,body[data-pg=ask] header{pointer-events:none}
+body[data-pg=ask] main>section,body[data-pg=ask] main>p,body[data-pg=ask] nav#tabs,#mb{pointer-events:auto}
+body[data-pg=ask] #ask{margin-top:28vh}
+body[data-pg=ask] .card{--card:rgba(3,5,14,.62)}
+body[data-pg=ask] #log{min-height:110px;max-height:32vh}
+.pulse{animation:pu 1.4s ease-out}@keyframes pu{0%{box-shadow:0 0 0 0 rgba(242,200,121,.75)}100%{box-shadow:0 0 0 46px rgba(242,200,121,0)}}
+#jw{font:700 24px/1.4 "Cinzel",Georgia,serif;margin:6px 0 12px}#jw span{opacity:.4;transition:opacity .3s,text-shadow .3s;margin:0 5px}#jw span.on{opacity:1;color:#fff;text-shadow:0 0 16px #f2c879}
+.jc{justify-content:center;align-items:center;margin:8px 0}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.card{backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 10px 40px rgba(0,0,0,.35)}
+h1{text-shadow:0 0 22px rgba(242,200,121,.55)}header svg{display:none}header{padding:2px 0}
+#mb{position:fixed;top:calc(env(safe-area-inset-top,0px) + 10px);right:12px;z-index:30;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--acc);font:700 24px/1 "Nunito",sans-serif;cursor:pointer;backdrop-filter:blur(10px)}
+nav#tabs{display:none;position:fixed;top:calc(env(safe-area-inset-top,0px) + 62px);right:12px;width:220px;flex-direction:column;margin:0;z-index:30;backdrop-filter:blur(16px)}
+nav#tabs.open{display:flex}nav#tabs button{text-align:left;font-size:15px}
+.m.bot{box-shadow:0 0 18px rgba(242,200,121,.12)}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body data-pg="ask">
+<div id="sv" aria-hidden="true"><svg viewBox="0 0 400 600" preserveAspectRatio="xMidYMin meet"><defs><radialGradient id="au"><stop offset="0" stop-color="#6fa0ff" stop-opacity=".5"/><stop offset="1" stop-color="#6fa0ff" stop-opacity="0"/></radialGradient><linearGradient id="bl" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7ba3ec"/><stop offset="1" stop-color="#2c4f9f"/></linearGradient><linearGradient id="gd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f6d98a"/><stop offset="1" stop-color="#a8741d"/></linearGradient></defs><circle cx="205" cy="170" r="190" fill="url(#au)"/><path d="M70 40L61 112L79 112Z M48 62Q46 108 70 116Q94 108 92 62Q84 98 70 102Q56 98 48 62Z" fill="url(#gd)"/><rect x="67" y="108" width="6" height="440" rx="3" fill="url(#gd)"/><path d="M52 142h36l-11 17l11 17h-36l11-17z" fill="url(#gd)"/><path d="M88 150Q128 190 104 270Q100 205 80 172Z" fill="#e2672a" opacity=".85"/><path d="M150 215Q205 196 262 215L256 352Q205 366 146 352Z" fill="url(#bl)"/><path d="M146 226Q112 300 128 384M262 226Q300 300 282 388" stroke="url(#bl)" stroke-width="26" stroke-linecap="round" fill="none"/><path d="M96 410Q205 352 306 410Q346 474 304 526Q205 566 96 526Q58 474 96 410Z" fill="#e9d9c0"/><path d="M150 404Q205 456 258 404L274 486Q205 524 130 486Z" fill="#d8602b" opacity=".88"/><ellipse cx="160" cy="540" rx="30" ry="11" fill="#4a73c9"/><ellipse cx="246" cy="540" rx="30" ry="11" fill="#4a73c9"/><rect x="186" y="186" width="30" height="34" fill="#4a73c9"/><path d="M150 232Q205 340 262 232" stroke="#6b3a1d" stroke-width="9" stroke-linecap="round" stroke-dasharray="0 12" fill="none"/><path d="M160 222Q205 262 250 222" stroke="#1d2a2a" stroke-width="10" stroke-linecap="round" fill="none"/><ellipse cx="150" cy="232" rx="12" ry="18" fill="#1d2a2a"/><path d="M164 132Q158 80 205 68Q250 80 244 132Q228 100 205 100Q182 100 164 132Z" fill="#1a1226"/><ellipse cx="205" cy="80" rx="27" ry="31" fill="#1a1226"/><path d="M166 130Q148 200 168 252M244 130Q262 200 242 252" stroke="#1a1226" stroke-width="8" fill="none" stroke-linecap="round"/><ellipse cx="205" cy="152" rx="35" ry="43" fill="#7ea6ef"/><path d="M164 132Q205 108 246 132Q246 112 205 104Q164 112 164 132Z" fill="#1a1226"/><path d="M184 152q8 6 16 0M210 152q8 6 16 0" stroke="#10162f" stroke-width="2.4" fill="none" stroke-linecap="round"/><path d="M182 144q9-5 18 0M210 144q9-5 18 0M205 154v14M197 182q8 4 16 0" stroke="#10162f" stroke-width="2" fill="none" stroke-linecap="round"/><ellipse cx="205" cy="135" rx="2.6" ry="6.5" fill="#e23"/><path d="M183 121q22-8 44 0M184 126q21-7 42 0M185 131q20-6 40 0" stroke="#eef3ff" stroke-width="1.8" fill="none"/><circle cx="169" cy="160" r="4" fill="url(#gd)"/><path d="M232 70a18 18 0 1 0 18 28a13 13 0 1 1-18-28z" fill="#eef3ff"/></svg></div>
+<div id="bgart" aria-hidden="true"><svg viewBox="0 0 600 600" fill="none" stroke="currentColor" style="color:var(--acc)"><g class="spin" stroke-width="2"><circle cx="300" cy="300" r="280"/><circle cx="300" cy="300" r="230"/><circle cx="300" cy="300" r="120"/><g id="pt"><path d="M300 20v90M300 490v90M20 300h90M490 300h90M102 102l64 64M434 434l64 64M498 102l-64 64M166 434l-64 64"/></g><circle cx="300" cy="300" r="40"/></g><path d="M300 90v420M250 130c0 50 20 70 50 70s50-20 50-70M300 90l-40-40M300 90l40-40" stroke-width="3"/></svg></div>
+<div id="ov" role="dialog" aria-label="Shiva thought for today">
+<svg viewBox="0 0 120 120" fill="none" stroke="#f2c879" stroke-width="3" stroke-linecap="round"><circle cx="60" cy="62" r="40"/><path d="M40 60q8 6 16 0M64 60q8 6 16 0M60 38v10M44 78h32M46 85h28M50 92h20"/><path d="M30 22a16 16 0 1 0 20 20a12 12 0 1 1-20-20z"/></svg>
+<p class="mute" style="color:#e8c7b3">Today’s thought from Mahadev</p>
+<p class="quote" id="oq"></p>
+<button class="btn" id="enter">Om Namah Shivaya</button>
+</div>
+<main>
+<header>
+<svg viewBox="0 0 120 120" fill="none" stroke="var(--acc)" stroke-width="3" stroke-linecap="round" aria-hidden="true"><circle cx="60" cy="62" r="40"/><path d="M40 60q8 6 16 0M64 60q8 6 16 0M60 38v10M44 78h32M46 85h28M50 92h20"/><path d="M30 22a16 16 0 1 0 20 20a12 12 0 1 1-20-20z"/></svg>
+<h1>Samsara</h1><button id="mb" aria-label="More pages" aria-expanded="false">⋮</button>
+<p class="sub">Speak with Mahadev. Calm, kind and always here.</p>
+</header>
+<nav role="tablist" id="tabs">
+<button role="tab" data-t="ask" aria-selected="true">Mahadev</button>
+<button role="tab" data-t="stories" aria-selected="false">Shiv-Sati stories</button>
+<button role="tab" data-t="rules" aria-selected="false">Dharma rules</button>
+<button role="tab" data-t="mine" aria-selected="false">My practice</button>
+<button role="tab" data-t="japa" aria-selected="false">Japa</button>
+<button role="tab" data-t="exp" aria-selected="false">Explore</button>
+</nav>
+
+<section id="ask" class="on"><div class="card">
+<div class="row" style="margin-bottom:8px"><label class="mute" for="lang" style="align-self:center">Language</label><select id="lang"><option>English</option><option>हिन्दी</option><option>తెలుగు</option></select></div>
+<div id="log" aria-live="polite"><div class="m bot">Om Namah Shivaya, dear one. I am here to listen. Tell me what is in your heart, or ask me about Dharma, Karma, devotion and peace.</div></div>
+<div class="chips" id="chips"></div>
+<div class="row"><input type="text" id="q" placeholder="Speak to Mahadev…" aria-label="Your message"><button class="btn" id="send">Send</button></div>
+</div></section>
+
+<section id="stories"><div class="card"><h2>Shiv–Sati love stories</h2><p class="mute">Gentle retellings inspired by the Shiva Purana. Different texts tell them differently.</p><div id="sl"></div></div>
+<div class="card"><h3>Hear a new story, any time</h3><p class="mute">Mahadev will tell you a fresh Shiv–Shakti story each time you ask.</p>
+<div class="chips" id="sc"></div><div class="row"><button class="btn" id="gs">Tell me a new story</button></div><div id="so" class="m bot" style="display:none;margin-top:10px;max-width:100%"></div></div></section>
+
+<section id="rules"><div class="card"><h2>Dharma rules and how to follow them</h2><p class="mute">Open a rule, read the steps, then tap “Add to my practice”.</p><div id="rl"></div></div></section>
+
+<section id="mine">
+<div class="card"><h2>Today’s thought</h2><p class="quote" id="dq"></p><button class="btn alt" id="shr">Share this thought</button></div>
+<div class="card"><h2>My practice today</h2><div class="bar"><i id="pb"></i></div><p class="mute" id="ps"></p><div id="tl"></div>
+<div class="row" style="margin-top:12px"><input type="text" id="nt" placeholder="Add your own practice…" aria-label="New practice"><button class="btn alt" id="na">Add</button></div>
+<p class="mute">Saved in this browser. Ticks reset every morning.</p></div>
+<div class="card"><h2>Streak and badges</h2><p id="st"></p><div id="bd"></div></div></section>
+
+<section id="japa"><div class="card center"><h2>Om Namah Shivaya japa</h2><p class="mute">Tap once for each chant. 108 chants make one mala.</p>
+<button id="jap" aria-label="Count one chant"><span id="jc">0</span><small id="jm"></small></button><p id="jw" aria-live="polite"></p>
+<div class="row jc"><button class="btn" id="ja">Start chanting</button><select id="jt" aria-label="How many chants"><option value="11">11 chants</option><option value="21">21 chants</option><option value="54">54 chants</option><option value="108">108 chants (1 mala)</option></select></div>
+<p class="mute">Breathe slowly and chant Om Namah Shivaya silently in your mind as the ring fills. One full circle takes 30 seconds. You can also tap the circle to count by hand.</p>
+<button class="btn alt" id="jr">Reset today</button></div></section>
+
+<section id="exp">
+<div class="card"><h2>Mantras</h2><div id="mn"></div></div>
+<div class="card"><h2>Festivals and vrats</h2><div id="fs"></div></div>
+<div class="card"><h2>12 Jyotirlingas</h2><p class="mute">Sacred Shiva shrines. Plan a pilgrimage one temple at a time.</p><div id="jl"></div></div>
+<div class="card"><h2>Shiva temples near you</h2><p><a href="https://www.google.com/maps/search/Shiva+temple+near+me" target="_blank" rel="noopener">Open nearby Shiva temples in Google Maps</a></p></div>
+</section>
+<p class="sk">Samsara is an AI-created devotional voice inspired by Shiva’s teachings and the Puranas. It is not the deity itself, and practices differ between families and lineages. Please ask your elders or a guru for guidance.</p>
+</main>
+<script>
+const $=s=>document.querySelector(s),E=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const S={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const today=()=>new Date().toISOString().slice(0,10);
+const Q=["Be calm like the mountain and let your thoughts settle like snow.","Every ending is a quiet beginning. Do not fear change.","Let go of what you cannot hold, and hold on to what is true.","Kindness is the strongest weapon a devotee can carry.","Within silence you will find me. Sit with yourself for a little while.","Burn your ego in the fire of effort, and wear the ash with humility.","You are never alone. Faith is a lamp that needs only a small flame.","Do your work with a pure heart and leave the fruit to the universe.","Even poison can become a jewel when held with patience.","Love without ego is the highest worship."];
+const dq=Q[Math.floor(Date.now()/864e5)%Q.length];$('#oq').textContent='“'+dq+'”';$('#dq').textContent='“'+dq+'”';
+$('#enter').onclick=()=>$('#ov').classList.add('off');
+$('#shr').onclick=async()=>{const t='“'+dq+'” – Mahadev, via Samsara. Om Namah Shivaya';try{if(navigator.share)await navigator.share({text:t});else{await navigator.clipboard.writeText(t);$('#shr').textContent='Copied. Paste it anywhere'}}catch(e){}};
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.querySelectorAll('#tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t))});
+function acc(box,items,fn){items.forEach(it=>{const d=E('details'),s=E('summary',0,it[0]);d.append(s);fn(d,it);$(box).append(d)})}
+// stories
+const ST=[["Sati chooses Shiva","Sati, daughter of Daksha, loved Shiva from childhood and prayed for him with her whole heart. Pleased by her devotion, Shiva agreed to marry her, though her father did not approve. Their love was simple, quiet and full of respect."],["The grief of Shiva","When Daksha insulted Shiva, Sati could not bear it and gave up her life. Shiva’s sorrow shook the world. The story reminds us that great love can also mean great loss, and that grief is part of devotion."],["Parvati’s tapasya","Reborn as Parvati, she vowed to marry only Shiva. She meditated for years through heat and cold, and her patience touched even the gods. Her story teaches that steady effort and faith can move mountains."],["The test of the sages","To test Parvati, Shiva came in disguise and spoke ill of himself. She defended him firmly and would not hear a word against him. He smiled and revealed himself, moved by her loyalty."],["Kamadeva and the third eye","The gods sent Kamadeva to wake Shiva’s love for Parvati. Shiva, disturbed in meditation, opened his third eye. Later, he grew to love Parvati deeply, and Kamadeva’s wife Rati was comforted."],["The wedding of Shiva and Parvati","Shiva arrived with a wild procession of ganas, ash on his body and a serpent around his neck. Parvati’s mother was shocked, but Parvati saw only his true heart. Their wedding is remembered at Maha Shivaratri."],["Ardhanarishvara","Shiva and Shakti appeared as one form, half Shiva and half Parvati. It teaches that masculine and feminine, strength and compassion, belong together as equals."],["Parvati and the birth of Ganesha","While Shiva was away, Parvati created a boy to guard her door. This was Ganesha, and his story brought the whole family together in a surprising and tender way."]];
+acc('#sl',ST,(d,it)=>d.append(E('p',0,it[1])));
+['Love and devotion','Parvati’s patience','A tender family moment','Shiva’s compassion'].forEach(t=>{const b=E('button','chip',t);b.onclick=()=>{theme=t;gen()};$('#sc').append(b)});
+let theme='';$('#gs').onclick=()=>{theme='';gen()};
+// rules
+const R=[["Wake early and begin with gratitude","Starting the day calmly sets the tone for everything.",["Wake a little earlier than usual.","Fold your hands and say thanks.","Chant Om Namah Shivaya before picking up your phone."],"Wake early and thank God"],["Daily puja or prayer","Quiet minutes with your ishta devata keep the mind steady.",["Light a diya at a clean spot.","Offer water, a flower or a prayer.","Chant Om Namah Shivaya or a Shiva stotra."],"Do daily puja or prayer"],["Ahimsa (non-violence)","Do not harm others in thought, word or action.",["Pause before speaking angrily.","Be kind to animals and people.","Choose gentle words, especially online."],"Practise ahimsa: speak kindly"],["Satya (truthfulness)","Speak truth with kindness and keep your promises.",["Say only what you know is true.","Keep the promises you make.","If the truth may hurt, say it softly."],"Practise satya: keep every promise"],["Respect parents, teachers and elders","Mother, father and guru are our first teachers.",["Greet elders with respect.","Listen without interrupting.","Help at home without being asked."],"Help and respect my elders"],["Seva and daan","Giving without expecting anything back purifies the heart.",["Share food, time or what you can afford.","Help someone quietly.","Offer your skills to a good cause."],"Do one act of seva or daan"],["Sattvic, simple food","Light, clean food supports a calm mind.",["Eat fresh, simple meals.","Thank the food before eating.","Avoid wasting food."],"Eat a simple sattvic meal with thanks"],["Svadhyaya (self-study)","Read uplifting texts every day.",["Read a page of the Gita or a Shiva Purana story.","Think about one idea.","Try to live it today."],"Read one page of scripture"],["Monday Shiva vrat","Many devotees fast or pray extra on Mondays.",["Bathe and keep the day simple.","Offer water and bilva leaves at a Shiva lingam.","Chant Om Namah Shivaya. Fast only if your health allows."],"Observe Monday Shiva vrat (if healthy)"],["Shiv Dhyan","Meditation on Shiva brings peace and focus.",["Sit comfortably with a straight back.","Close your eyes and picture Shiva in calm meditation.","Repeat Om Namah Shivaya slowly for 5 minutes."],"Meditate on Shiva for 5 minutes"]];
+acc('#rl',R,(d,r)=>{d.append(E('p',0,r[1]),E('h3',0,'How to follow'));const o=E('ol');r[2].forEach(t=>o.append(E('li',0,t)));d.append(o);const b=E('button','btn alt','Add to my practice');b.onclick=()=>{add(r[3]);b.textContent='Added to my practice'};d.append(b)});
+// practice, streak
+let T=S.get('sam.todos',[]),D=S.get('sam.days',[]);
+function add(t){t=t.trim();if(!t||T.some(x=>x.t===t))return;T.push({t,d:''});S.set('sam.todos',T);draw()}
+function streak(){let n=0,d=new Date();if(!D.includes(today()))d.setDate(d.getDate()-1);while(D.includes(d.toISOString().slice(0,10))){n++;d.setDate(d.getDate()-1)}return n}
+function draw(){const L=$('#tl');L.innerHTML='';if(!T.length)L.append(E('p','mute','Nothing here yet. Add a practice from Dharma rules, or write your own below.'));
+T.forEach((x,i)=>{const dn=x.d===today(),r=E('div','todo'+(dn?' done':'')),c=E('input');c.type='checkbox';c.checked=dn;c.setAttribute('aria-label',x.t);
+c.onchange=()=>{x.d=c.checked?today():'';S.set('sam.todos',T);const any=T.some(y=>y.d===today());D=D.filter(z=>z!==today());if(any)D.push(today());S.set('sam.days',D);draw()};
+const k=E('button','x','×');k.setAttribute('aria-label','Remove '+x.t);k.onclick=()=>{T.splice(i,1);S.set('sam.todos',T);draw()};r.append(c,E('span',0,x.t),k);L.append(r)});
+const n=T.filter(x=>x.d===today()).length;$('#pb').style.width=T.length?(100*n/T.length)+'%':'0';$('#ps').textContent=T.length?n+' of '+T.length+' done today'+(n===T.length?'. Har Har Mahadev!':''):'';
+const s=streak();$('#st').textContent=s?s+' day streak. Keep going!':'Tick one practice today to start your streak.';$('#bd').innerHTML='';[[3,'3 days: Shraddha'],[7,'7 days: Sadhaka'],[21,'21 days: Tapasvi'],[108,'108 days: Shiv Bhakt']].forEach(b=>$('#bd').append(E('span','badge'+(s>=b[0]?'':' off'),b[1])))}
+$('#na').onclick=()=>{add($('#nt').value);$('#nt').value=''};$('#nt').addEventListener('keydown',e=>{if(e.key==='Enter')$('#na').click()});draw();
+// japa
+let J=S.get('sam.japa',{d:today(),n:0});if(J.d!==today())J={d:today(),n:0};
+const dj=()=>{$('#jc').textContent=J.n;$('#jm').textContent=Math.floor(J.n/108)+' mala · '+J.n%108+'/108'};
+$('#jap').onclick=()=>{J.n++;S.set('sam.japa',J);dj()};$('#jr').onclick=()=>{J.n=0;S.set('sam.japa',J);dj()};dj();
+// explore
+acc('#mn',[["Om Namah Shivaya","Om Namah Shivaya","“I bow to Shiva.” The five-syllable mantra for peace and surrender. Chant it slowly, 108 times."],["Maha Mrityunjaya Mantra","Om Tryambakam Yajamahe Sugandhim Pushtivardhanam, Urvarukamiva Bandhanan Mrityor Mukshiya Maamritat","A prayer to the three-eyed Shiva for health, protection and freedom from fear."],["Shiva Gayatri","Om Tatpurushaya Vidmahe Mahadevaya Dhimahi, Tanno Rudrah Prachodayat","A meditation asking Mahadev to guide our understanding."]],(d,m)=>{d.append(E('p',0,m[1]),E('p','mute',m[2]))});
+acc('#fs',[["Maha Shivaratri","Observed on the night of Phalguna Krishna Chaturdashi (usually February or March). Devotees fast, stay awake and chant through the night."],["Monday vrat (Somvar)","Every Monday. Many devotees fast and offer water or milk and bilva leaves. Sawan Mondays are especially dear to Shiva bhaktas."],["Pradosham","Observed twice a month on Trayodashi, at twilight. A good time for Shiva puja and Abhishekam."],["Masik Shivaratri","Observed every month on Krishna Chaturdashi. A smaller Shivaratri for steady devotees."],["Kartik Purnima","In the month of Kartik, when diyas are lit at Shiva temples."]],(d,f)=>d.append(E('p',0,f[1]),E('p','mute','Dates change every year, so please check a trusted panchang.')));
+acc('#jl',[["Somnath","Gujarat (Prabhas Patan)"],["Mallikarjuna","Srisailam, Andhra Pradesh"],["Mahakaleshwar","Ujjain, Madhya Pradesh"],["Omkareshwar","Madhya Pradesh"],["Kedarnath","Uttarakhand (Himalayas)"],["Bhimashankar","Maharashtra"],["Kashi Vishwanath","Varanasi, Uttar Pradesh"],["Trimbakeshwar","Nashik, Maharashtra"],["Vaidyanath","Deoghar, Jharkhand (some traditions name other places)"],["Nageshwar","Near Dwarka, Gujarat (some traditions name other places)"],["Rameshwaram","Tamil Nadu"],["Grishneshwar","Near Ellora, Maharashtra"]],(d,j)=>d.append(E('p',0,j[1])));
+// chat
+const CH=['I feel anxious today','What is Karma?','Teach me to meditate','Why do you wear ash?','How can I be a better devotee?'];
+CH.forEach(t=>{const b=E('button','chip',t);b.onclick=()=>{$('#q').value=t;send()};$('#chips').append(b)});
+let hist=[],busy=0,sample=null;
+async function ask(body,el){try{const r=await fetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});const d=await r.json().catch(()=>({}));if(!r.ok)throw{msg:d.error};el.textContent=d.text;$('#log').scrollTop=1e9;return d.text}
+catch(e){el.textContent=(e&&e.msg)||'Mahadev is resting for a moment. Please check your internet and try again soon.';return null}}
+async function send(){const q=$('#q').value.trim();if(!q||busy)return;busy=1;$('#send').disabled=true;$('#q').value='';m('you',q);const el=m('bot','…');
+const a=await ask({kind:'chat',lang:$('#lang').value,messages:hist.concat([{role:'user',content:q}])},el);if(a){hist.push({role:'user',content:q},{role:'assistant',content:a});hist=hist.slice(-12)}busy=0;$('#send').disabled=false}
+function m(c,t){const d=E('div','m '+c,t);$('#log').append(d);$('#log').scrollTop=1e9;return d}
+$('#send').onclick=send;$('#q').addEventListener('keydown',e=>{if(e.key==='Enter')send()});
+async function gen(){if(busy)return;busy=1;const o=$('#so');o.style.display='block';o.textContent='…';await ask({kind:'story',lang:$('#lang').value,theme},o);busy=0}
+// chat-first, menu, page backgrounds
+document.querySelector('#log .m').textContent='Om Namah Shivaya, dear one. “'+dq+'” I am here to listen. Tell me what is in your heart.';
+const mb=$('#mb'),nv=$('#tabs'),pgc={ask:[0xffd27a,0xff9a5a],stories:[0xff9ab4,0xffd0dc],rules:[0xffb347,0xffe0a0],mine:[0x7fe8c2,0xc8fff0],japa:[0x7cc7ff,0xcfe9ff],exp:[0xc9a2ff,0xe7d6ff]};
+let setPg=()=>{};
+mb.onclick=e=>{e.stopPropagation();const o=nv.classList.toggle('open');mb.setAttribute('aria-expanded',o)};
+document.addEventListener('click',e=>{if(!nv.contains(e.target)){nv.classList.remove('open');mb.setAttribute('aria-expanded','false')}});
+nv.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;document.body.dataset.pg=b.dataset.t;setPg(b.dataset.t);nv.classList.remove('open');scrollTo(0,0)});
+// 3D Shiva scene: trishul, chakra rings, stars
+try{if(!window.THREE)throw 0;const cv=document.createElement('canvas');cv.id='gl';document.body.prepend(cv);
+const R=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true}),sc=new THREE.Scene(),cam=new THREE.PerspectiveCamera(50,1,.1,100);
+const L1=new THREE.PointLight(0xffd27a,1.7,60);L1.position.set(4,4,6);sc.add(L1,new THREE.AmbientLight(0xffffff,.5));
+const mat=new THREE.MeshStandardMaterial({color:0xf2c879,metalness:.85,roughness:.28,emissive:0x2a1200}),g=new THREE.Group();sc.add(g);
+const r1=new THREE.Mesh(new THREE.TorusGeometry(2.6,.05,16,120),mat),r2=new THREE.Mesh(new THREE.TorusGeometry(1.9,.04,16,120),mat),r3=new THREE.Mesh(new THREE.TorusGeometry(1.2,.035,16,120),mat);g.add(r1,r2,r3);
+const tr=new THREE.Group();tr.add(new THREE.Mesh(new THREE.CylinderGeometry(.06,.06,4.2,14),mat));
+[[-.5,.9],[0,1.15],[.5,.9]].forEach(p=>{const c=new THREE.Mesh(new THREE.ConeGeometry(.09,p[1],14),mat);c.position.set(p[0],2.1+p[1]/2,0);tr.add(c)});
+const ar=new THREE.Mesh(new THREE.TorusGeometry(.5,.05,12,40,Math.PI),mat);ar.rotation.z=Math.PI;ar.position.y=2.1;tr.add(ar);
+const dm=new THREE.Mesh(new THREE.SphereGeometry(.14,16,16),mat);dm.position.set(.25,.9,0);tr.add(dm);tr.position.y=-.4;g.add(tr);
+const N=450,pa=new Float32Array(N*3);for(let i=0;i<N*3;i++)pa[i]=(Math.random()-.5)*30;
+const pg=new THREE.BufferGeometry();pg.setAttribute('position',new THREE.BufferAttribute(pa,3));const pm=new THREE.PointsMaterial({color:0xffe9b0,size:.06,transparent:true,opacity:.8}),pts=new THREE.Points(pg,pm);sc.add(pts);
+const fm=(c,e=0)=>new THREE.MeshStandardMaterial({color:c,roughness:.55,metalness:.1,emissive:e});
+const F=new THREE.Group(),bl=fm(0x4a7fe0,0x0b1d4d),dk=fm(0x0a0f24),sv=fm(0xdfe9ff,0x3a4a7a);
+const ad=(m,x,y,z,rx=0,rz=0)=>{m.position.set(x,y,z);m.rotation.x=rx;m.rotation.z=rz;F.add(m);return m};
+const hd=new THREE.Mesh(new THREE.SphereGeometry(1,48,48),bl);hd.scale.set(.9,1.1,.95);F.add(hd);
+[-1,1].forEach(s=>ad(new THREE.Mesh(new THREE.TorusGeometry(.2,.022,8,24,Math.PI),dk),s*.33,.14,.87,0,Math.PI));
+ad(new THREE.Mesh(new THREE.SphereGeometry(.07,16,16),fm(0xff4a4a,0x992222)),0,.42,.87).scale.set(.7,1.5,.5);
+ad(new THREE.Mesh(new THREE.SphereGeometry(.09,16,16),bl),0,-.1,.99).scale.set(1,1.3,1);
+ad(new THREE.Mesh(new THREE.TorusGeometry(.14,.025,8,20,Math.PI),dk),0,-.33,.9,0,Math.PI);
+ad(new THREE.Mesh(new THREE.SphereGeometry(.5,24,24),dk),0,1.25,-.1);
+ad(new THREE.Mesh(new THREE.TorusGeometry(.62,.16,12,36),dk),0,.85,-.05,Math.PI/2.6);
+[-1,1].forEach(s=>ad(new THREE.Mesh(new THREE.CylinderGeometry(.12,.06,1.6,10),dk),s*.8,-.1,-.3));
+ad(new THREE.Mesh(new THREE.TorusGeometry(.22,.05,10,30,Math.PI*1.5),sv),.45,1.5,.2,0,.6);
+ad(new THREE.Mesh(new THREE.CylinderGeometry(.38,.5,.7,24),bl),0,-1.15,0);
+ad(new THREE.Mesh(new THREE.SphereGeometry(1,32,24),bl),0,-1.75,-.1).scale.set(1.5,.55,.8);
+ad(new THREE.Mesh(new THREE.TorusGeometry(.62,.07,10,40),fm(0x35504a)),0,-1,.05,Math.PI/2.1);
+const hl=ad(new THREE.Mesh(new THREE.CircleGeometry(1.9,48),new THREE.MeshBasicMaterial({color:0x5aa8ff,transparent:true,opacity:.16,blending:THREE.AdditiveBlending,depthWrite:false})),0,.2,-1);
+const ar2=ad(new THREE.Mesh(new THREE.TorusGeometry(1.75,.02,12,100),fm(0x9fd0ff,0x9fd0ff)),0,.2,-.9);
+F.scale.setScalar(.8);sc.add(F);
+const Lf=new THREE.PointLight(0x9fd0ff,1.4,40);Lf.position.set(2,3,7);const Lr=new THREE.PointLight(0xa070ff,1.2,40);Lr.position.set(-5,2,-3);sc.add(Lf,Lr);
+const GN=5000,gp=new Float32Array(GN*3),gc=new Float32Array(GN*3),c1=new THREE.Color(0xbfe0ff),c2=new THREE.Color(0x8a5cff);
+for(let i=0;i<GN;i++){const r=Math.pow(Math.random(),1.4)*11,a=r*.9+(i%3)*2.094+(Math.random()-.5)*.6;gp[i*3]=Math.cos(a)*r;gp[i*3+1]=(Math.random()-.5)*.5;gp[i*3+2]=Math.sin(a)*r;const c=c1.clone().lerp(c2,Math.min(r/11,1));gc.set([c.r,c.g,c.b],i*3)}
+const ga=new THREE.BufferGeometry();ga.setAttribute('position',new THREE.BufferAttribute(gp,3));ga.setAttribute('color',new THREE.BufferAttribute(gc,3));
+const GL=new THREE.Points(ga,new THREE.PointsMaterial({size:.05,vertexColors:true,transparent:true,opacity:.9,blending:THREE.AdditiveBlending,depthWrite:false}));GL.rotation.x=.9;GL.position.set(0,1.5,-5);sc.add(GL);
+let ty=0,tx=0,dr=null;const fz=E('div');fz.id='fz';document.body.prepend(fz);
+fz.onpointerdown=e=>{dr=[e.clientX,e.clientY];try{fz.setPointerCapture(e.pointerId)}catch(x){}};
+fz.onpointermove=e=>{if(!dr)return;ty+=(e.clientX-dr[0])*.012;tx=Math.max(-.6,Math.min(.6,tx+(e.clientY-dr[1])*.008));dr=[e.clientX,e.clientY]};
+fz.onpointerup=fz.onpointercancel=()=>{dr=null};
+addEventListener('pointermove',e=>{const s=document.body.style;s.setProperty('--px',(e.clientX/innerWidth-.5)*2);s.setProperty('--py',(e.clientY/innerHeight-.5)*2)});
+const upd=t=>{const ask=document.body.dataset.pg==='ask';F.visible=Lf.visible=Lr.visible=false;GL.visible=false;g.visible=!ask;pts.visible=!ask;fz.style.display=ask?'block':'none';if(!ask)return;if(!dr)ty+=.0015;const ck=document.getElementById('ck');if(ck)ck.setAttribute('transform','rotate('+(ty*40)+' 300 300)');F.rotation.y+=(Math.sin(ty)*1.1-F.rotation.y)*.12;F.rotation.x+=(tx-F.rotation.x)*.12;F.position.y=(innerWidth<640?2.8:1.6)+Math.sin(t*.001)*.08;GL.rotation.y=t*.00008;ar2.rotation.z=t*.0004;hl.material.opacity=.14+Math.sin(t*.0015)*.04};
+setPg=p=>{const c=pgc[p]||pgc.ask;L1.color.set(c[0]);pm.color.set(c[1]);mat.color.set(c[1]===0xffe0a0?0xffd27a:0xf2c879)};
+let mx=0,my=0;addEventListener('pointermove',e=>{mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+const rs=()=>{R.setPixelRatio(Math.min(devicePixelRatio,2));R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.position.z=innerWidth<640?11:7.5;cam.updateProjectionMatrix()};rs();addEventListener('resize',rs);
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const loop=t=>{upd(t);g.rotation.y=t*.0004+mx*.6;g.rotation.x=my*.3;r1.rotation.z=t*.0003;r2.rotation.z=-t*.0005;r3.rotation.x=t*.0006;tr.rotation.y=t*.0008;g.position.y=Math.sin(t*.0012)*.15;pts.rotation.y=t*.00004;R.render(sc,cam);if(!still)requestAnimationFrame(loop)};requestAnimationFrame(loop)}catch(e){}
+// guided japa: auto count, chant voice, hum, follow-along words
+const jw=$('#jw'),W=['Om','Namah','Shivaya'].map(t=>{const s=E('span',0,t);jw.append(s);return s});
+let jid=null,jdone=0,ac=null,hum=null;
+function say(){if(!$('#jv').checked||!('speechSynthesis' in window))return;try{const vs=speechSynthesis.getVoices(),v=vs.find(x=>/^hi/i.test(x.lang))||vs.find(x=>/^en[-_]IN/i.test(x.lang));const u=new SpeechSynthesisUtterance(v&&/^hi/i.test(v.lang)?'ॐ नमः शिवाय':'Om Namah Shivaya');if(v){u.voice=v;u.lang=v.lang}else u.lang='hi-IN';u.rate=.55;u.pitch=.75;speechSynthesis.cancel();speechSynthesis.speak(u)}catch(e){}}
+let cur=null;
+function chant(k){if(!$('#jv').checked)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const t0=ac.currentTime+.05,o=ac.createOscillator();o.type='sawtooth';
+const lf=ac.createOscillator(),lg=ac.createGain();lf.frequency.value=5;lg.gain.value=2.2;lf.connect(lg);lg.connect(o.frequency);
+const out=ac.createGain(),f1=ac.createBiquadFilter(),f2=ac.createBiquadFilter(),g2=ac.createGain();[f1,f2].forEach(f=>{f.type='bandpass';f.Q.value=7});g2.gain.value=.55;
+o.connect(f1);o.connect(f2);f1.connect(out);f2.connect(g2);g2.connect(out);out.connect(ac.destination);
+f1.frequency.setValueAtTime(500,t0);f2.frequency.setValueAtTime(850,t0);out.gain.setValueAtTime(0,t0);o.frequency.setValueAtTime(110,t0);
+const seq=[[500,850,1,3.2,110],[250,1000,.55,2,110],[250,1000,.4,.3,123],[800,1200,1,.9,123],[250,1000,.45,.3,123],[800,1200,1,1.8,123],[500,1000,.25,.5,123],[300,2300,.9,1.9,131],[800,1200,.9,1.2,131],[300,2300,.6,.2,131],[800,1200,.95,2.6,123]];
+let t=t0;seq.forEach(s=>{const d=s[3]*k;f1.frequency.linearRampToValueAtTime(s[0],t+.12);f2.frequency.linearRampToValueAtTime(s[1],t+.12);out.gain.linearRampToValueAtTime(s[2]*.35,t+.12);o.frequency.linearRampToValueAtTime(s[4],t+.3);t+=d});
+out.gain.linearRampToValueAtTime(0,t+.6);o.start(t0);lf.start(t0);o.stop(t+.8);lf.stop(t+.8);cur={o,out}}catch(e){}}
+function stopC(){try{if(cur&&ac){cur.out.gain.cancelScheduledValues(ac.currentTime);cur.out.gain.setTargetAtTime(0,ac.currentTime,.1);cur.o.stop(ac.currentTime+.5)}}catch(e){}}
+function humOn(){if(!$('#jv').checked)return;try{ac=ac||new (window.AudioContext||window.webkitAudioContext)();const g=ac.createGain();g.gain.setValueAtTime(0,ac.currentTime);g.gain.linearRampToValueAtTime(.05,ac.currentTime+2);g.connect(ac.destination);const o=[136.1,272.2].map((f,i)=>{const x=ac.createOscillator();x.type='sine';x.frequency.value=f;const h=ac.createGain();h.gain.value=i?.4:1;x.connect(h);h.connect(g);x.start();return x});hum={g,o}}catch(e){}}
+function humOff(){try{if(!hum)return;const h=hum;h.g.gain.linearRampToValueAtTime(0,ac.currentTime+1);setTimeout(()=>h.o.forEach(x=>{try{x.stop()}catch(e){}}),1200);hum=null}catch(e){}}
+function beat(){J.n++;S.set('sam.japa',J);dj();jdone++;const b=$('#jap');b.classList.remove('pulse');void b.offsetWidth;b.classList.add('pulse');if(jdone>=+$('#jt').value)stopJ(true)}
+function stopJ(fin){cancelAnimationFrame(jraf);jhl.forEach(clearTimeout);jhl=[];jid=null;W.forEach(w=>w.classList.remove('on'));$('#jap').style.setProperty('--p',0);try{speechSynthesis.cancel()}catch(e){}$('#ja').textContent='Start chanting';if(fin)jw.after(Object.assign(E('p','mute','Beautiful. '+jdone+' chants complete. Har Har Mahadev!'),{id:'jdn'}))}
+let jraf=0,jhl=[];
+function cyc(){const s=performance.now();jhl=[0,9000,18000].map((ms,i)=>setTimeout(()=>W.forEach((w,k)=>w.classList.toggle('on',k===i)),ms));jid=true;const step=n=>{if(!jid)return;const p=Math.min((n-s)/30000,1);$('#jap').style.setProperty('--p',p*100);if(p<1)jraf=requestAnimationFrame(step);else{beat();if(jid)cyc()}};jraf=requestAnimationFrame(step)}
+$('#ja').onclick=()=>{if(jid){stopJ(false);return}const o=$('#jdn');if(o)o.remove();jdone=0;$('#ja').textContent='Pause';cyc()};
+$('#tabs').addEventListener('click',e=>{const b=e.target.closest('button');if(b&&b.dataset.t!=='japa'&&jid)stopJ(false)});
+const _jr=$('#jr').onclick;$('#jr').onclick=()=>{if(jid)stopJ(false);_jr()};
+// chakra background for the chat page (maroon and sandalwood)
+(()=>{const C='#e6c27a';let s='<svg viewBox="0 0 600 600" fill="none" stroke="'+C+'" stroke-width="1.6"><g id="ck"><circle cx="300" cy="300" r="288"/><circle cx="300" cy="300" r="272"/><circle cx="300" cy="300" r="200"/><circle cx="300" cy="300" r="122"/><circle cx="300" cy="300" r="56"/>';
+for(let k=0;k<24;k++)s+='<path d="M300 28Q322 80 300 128Q278 80 300 28Z" transform="rotate('+k*15+' 300 300)" opacity=".85"/><line x1="300" y1="56" x2="300" y2="200" transform="rotate('+k*15+' 300 300)" opacity=".5"/>';
+for(let k=0;k<8;k++)s+='<path d="M300 130Q342 190 300 250Q258 190 300 130Z" transform="rotate('+k*45+' 300 300)" fill="'+C+'" fill-opacity=".16"/>';
+s+='</g><text x="300" y="322" text-anchor="middle" font-size="64" fill="'+C+'" stroke="none" font-family="serif">\u0950</text></svg>';$('#sv').innerHTML=s})();
+// choose your own Shiva picture for the chat background (saved only on this device)
+(()=>{const row=$('#lang').parentNode,f=E('input');f.type='file';f.accept='image/*';f.hidden=true;
+const b=E('button','btn alt','Set my Shiva picture'),b2=E('button','btn alt','Use default');b.onclick=()=>f.click();row.append(b,b2,f);
+const sv=$('#sv');const apply=u=>{sv.querySelector('svg').style.display=u?'none':'';let im=sv.querySelector('img');if(!im){im=E('img');im.alt='';im.style.cssText='width:100%;height:100%;object-fit:contain;-webkit-mask-image:radial-gradient(ellipse at center,#000 55%,transparent 100%);mask-image:radial-gradient(ellipse at center,#000 55%,transparent 100%)';sv.append(im)}im.src=u||'';im.style.display=u?'block':'none';b2.style.display=u?'':'none'};
+apply(S.get('sam.bg',''));b2.onclick=()=>{S.set('sam.bg','');apply('')};
+f.onchange=()=>{const file=f.files[0];if(!file)return;const r=new FileReader();r.onload=()=>{const i=new Image();i.onload=()=>{const m=Math.min(1,900/Math.max(i.width,i.height)),c=document.createElement('canvas');c.width=Math.round(i.width*m);c.height=Math.round(i.height*m);c.getContext('2d').drawImage(i,0,0,c.width,c.height);const u=c.toDataURL('image/jpeg',.82);S.set('sam.bg',u);apply(u)};i.src=r.result};r.readAsDataURL(file)}})();
+if('serviceWorker' in navigator)addEventListener('load',()=>navigator.serviceWorker.register('/sw.js').catch(()=>{}));
+</script>
+</body>
+</html>
